@@ -3,7 +3,7 @@
 #include <math.h>
 
 //tem que ter 2 if, tem que ter ao menos 1 for e 1 while, tem que ter um vetor e tem que haver entrada
-de dados, tem que ter saida de dados.
+//de dados, tem que ter saida de dados.
 
 
 int binario_decimal(const char *binario) {
