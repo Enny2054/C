@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int num1, num2, soma, sub;
+
+int main(void){
+  printf("Digite o valor do primeiro número: ");
+  scanf("%d", &num1);
+  printf("Digite o valor do segundo número: ");
+  scanf("%d", &num2);
+
+  soma = num1 + num2;
+  
+  if (soma > 100){
+    sub = soma - 10;
+    printf("O resultado dos números é: %d", sub);
+  }
+  else if (soma <= 100){
+    printf("A soma dos números é: %d", soma);
+  }
+  return 0;
+  }
