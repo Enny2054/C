@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main(void) {
+    int num1, num2, soma, sub, mult;
+    float resultado_div;
+    char operacao;
+
+    printf("Digite o valor número 1: ");
+    scanf("%d", &num1);
+
+    printf("Digite o valor número 2: ");
+    scanf("%d", &num2);
+
+    printf("Digite a operação desejada (+, -, *, /): ");
+    scanf(" %c", &operacao);  
+
+    // Função condicional para a realização das operações
+    if (operacao == '+') {
+        soma = num1 + num2;
+        printf("O resultado da soma é: %d\n", soma);
+    }
+    else if (operacao == '-') {
+        sub = num1 - num2;
+        printf("O resultado da subtração é: %d\n", sub);
+    }
+    else if (operacao == '*') {
+        mult = num1 * num2;
+        printf("O resultado da multiplicação é: %d\n", mult);
+    }
+    else if (operacao == '/') {
+        if (num2 == 0) {
+            printf("Erro: divisão por zero não permitida.\n");
+        } else {
+            resultado_div = (float) num1 / num2;
+            printf("O resultado da divisão é: %.2f\n", resultado_div);
+        }
+    }
+    else {
+        printf("Operação inválida. Use apenas +, -, * ou /.\n");
+    }
+
+    return 0;
+}
