@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+#define SALDO_INICIAL 1000.00
+
+int opcao;
+float saldo = SALDO_INICIAL, valor;
+
+int main() {
+    
+    while (1) {
+        printf("Escolha uma opção: \n1 - Saldo; \n2 - Saque; \n3 - Depósito; \n4 - Sair. \n ");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                printf("Seu saldo é de: %.2f\n", saldo);
+                break;
+
+            case 2:
+                printf("Digite o valor que deseja sacar: ");
+                scanf("%f", &valor);
+
+                if (valor > saldo) {
+                    printf("Saldo insuficiente\n");
+                } else {
+                    saldo -= valor;
+                    printf("Seu novo saldo é de: %.2f\n", saldo);
+                }
+                break;
+
+            case 3:
+                printf("Digite o valor que deseja depositar: ");
+                scanf("%f", &valor);
+                saldo += valor;
+                printf("Seu novo saldo é de: %.2f\n", saldo);
+                break;
+
+            case 4:
+                printf("Saindo...\n");
+                return 0;
+
+            default:
+                printf("Opção inválida.\n");
+        }
+    }
+
+    return 0;
+}
