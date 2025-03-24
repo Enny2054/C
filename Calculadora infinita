@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int main(){
+  char resposta='s';
+  int num1, num2, operacao;
+
+  do{
+    printf("Escolha a operação:\n1 - Soma\n2 - Subtração\n3 - Multiplicação\n4 - Divisão\n");
+    scanf("%d", &operacao);
+    printf("Digite o primeiro número: ");
+    scanf("%d", &num1);
+    printf("Digite o segundo número: ");
+    scanf("%d", &num2);
+    
+    switch(operacao){
+      case 1:
+      printf("Resultado: %d\n", num1+num2);
+      break;
+      
+      case 2:
+      printf("Resultado: %d\n", num1-num2);
+      break;
+      
+      case 3:
+      printf("Resultado: %d\n", num1*num2);
+      break;
+      
+      case 4:
+        if(num1 == 0 || num2 == 0)
+          printf("Não é possível dividir por zero!\n");
+        else
+          printf("Resultado: %d\n", num1/num2);
+      break;
+      
+      default:
+      printf("Operação inválida\n");
+    }
+    
+    printf("Deseja continuar? (s/n)\n");
+    scanf("%c", &resposta);
+      while(resposta=='s' || resposta=='S' || resposta=='n' || resposta=='N');
+  }
+  return 0;
+}
