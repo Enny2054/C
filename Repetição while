@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main(){
+
+  int idade, soma=0, qtd=0;
+  float media;
+
+  printf("Digite a idade: ");
+   scanf("%d", &idade);
+  while(idade != 0){
+    qtd ++;
+    soma+=idade;
+    printf("Digite a idade: ");
+     scanf("%d", &idade);
+   }
+
+  media = soma/qtd;
+  printf("A média das idades é: %f", media);
+  printf("A quantidade de idades informadas é %d", qtd);
+  return 0;
+}
