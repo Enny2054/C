@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main(void) {
+  int num[2][2], i, j;
+
+  printf("Digite os números da matriz:\n");
+
+  // Entrada dos valores para a matriz
+  for (i = 0; i < 2; i++) {
+    for (j = 0; j < 2; j++) {
+      printf("Digite o número da linha %d e coluna %d: ", i + 1, j + 1);
+      scanf("%d", &num[i][j]);
+    }
+  }
+
+  // Impressão da matriz
+  printf("\nA matriz digitada é:\n");
+  for (i = 0; i < 2; i++) {
+    for (j = 0; j < 2; j++) {
+      printf("[%d] ", num[i][j]);  // Imprime o valor armazenado
+    }
+    printf("\n");  // Nova linha ao final de cada linha da matriz
+  }
+
+  return 0;
+}
