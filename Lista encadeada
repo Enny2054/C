@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Definição da estrutura de nó
+typedef struct No {
+    int valor;
+    struct No* proximo;
+} No;
+
+// Função para criar um novo nó
+No* CriarNo(int valor) {
+    No* novoNo = (No*)malloc(sizeof(No));
+    if (novoNo == NULL) {
+        printf("Erro na alocação de memória\n");
+        exit(1);
+    }
+    novoNo->valor = valor;
+    novoNo->proximo = NULL;
+    return novoNo;
+}
+
+int main() {
+    // Criação de nós da lista
+    No* primeiro = CriarNo(10);
+    No* segundo = CriarNo(20);
+    No* terceiro = CriarNo(30);
+
+    // Encadeando os nós
+    primeiro->proximo = segundo;
+    segundo->proximo = terceiro;
+
+    // Percorrendo a lista e exibindo a lista
+    No* atual = primeiro;
+    printf("Lista encadeada: ");
+    while (atual != NULL) {
+        printf("%d -> ", atual->valor);
+        atual = atual->proximo;
+    }
+    printf("NULL\n");
+
+    // Liberando a memória alocada
+    free(primeiro);
+    free(segundo);
+    free(terceiro);
+
+    return 0;
+}
