@@ -1,0 +1,48 @@
+// Função para comparar strings
+
+#include <stdio.h>
+
+int contarLetras(char *str) {
+  int contador = 0;
+
+  while (*str != 0) {
+    contador++;
+    str++;
+  }
+  return contador;
+}
+
+int compararStrings(char *str1, char *str2) {
+  int tam1 = contarLetras(str1);
+  int tam2 = contarLetras(str2);
+
+  if (tam1 > tam2)
+    printf("A primeira string é maior que a segunda.");
+
+    else if (tam1 < tam2)
+      printf("A segunda string é maior que a primeira.");
+  
+    else
+    printf("As duas strings são iguais.");
+}
+
+int main(void) {
+  char str1[100], str2[100];
+
+  // Entrada de dados
+  // Lendo a primeira string
+  printf("Digite a primeira string: ");
+  fgets(str1, sizeof(str1), stdin);
+  str1[strcspn(str1, "\n")] = 0;
+
+  // Lendo a segunda string
+  printf("Digite a segunda string: ");
+  fgets(str2, sizeof(str2), stdin);
+  str2[strcspn(str2, "\n")] = 0;
+
+  // Comparando as strings
+
+ compararStrings(str1, str2);
+  
+  return 0;
+}
