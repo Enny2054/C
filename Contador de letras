@@ -1,0 +1,26 @@
+// Função para contar letras
+
+#include <stdio.h>
+
+// Função que conta as letras de uma palavra
+int contarLetras(char *palavra) {
+  int contador = 0;
+
+  while (*palavra != 0) {
+    contador++;
+    palavra++;
+  }
+  return contador;
+}
+
+int main(void) {
+  char palavra[100];
+  printf("Digite uma palavra: ");
+  // Fgets ler string com espaço
+  fgets(palavra,sizeof(palavra),stdin);
+
+  // Remove o \n da string
+  palavra[strcspn(palavra, "\n")] = 0;
+
+  printf("A palavra %s tem %d letras.", palavra, contarLetras(palavra));
+}
