@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 
-int contarVogais(const char *str) {
+int contarVogais(char *str) {
     int contador = 0;
     while (*str != 0) {
       char c = *str;
