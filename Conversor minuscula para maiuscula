@@ -1,0 +1,27 @@
+// Função para converter uma string para letras maiúsculas
+
+#include <stdio.h>
+
+int conversorDeLetras(char *str) {
+    while (*str != '\0') {
+        if (*str >= 'a' && *str <= 'z') {
+            *str = *str - 32;
+        }
+        str++;
+    }
+}
+
+int main() {
+
+    char str[100];
+    printf("Digite o texto: ");
+    
+    // Leitura da string com espaços
+    fgets(str, sizeof(str), stdin);
+
+    conversorDeLetras(str);
+
+    printf("%s", str);
+
+    return 0;
+}
