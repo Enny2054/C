@@ -1,0 +1,23 @@
+# include  <stdio.h>
+
+void soma (int num1, int num2) {
+  printf ("Soma = %d\n", num1 + num2);
+}
+
+int subtracao (int num1, int num2) {
+  return (num1 - num2);
+}
+
+int main () {
+  int n1, n2;
+  printf ("Digite o primeiro numero: ");
+  scanf ("%d", &n1);
+  printf ("Digite o segundo numero: ");
+  scanf ("%d", &n2);
+
+// Imprimindo valores de duas formas diferentes
+  soma (n1, n2);
+  printf ("Subtracao = %d\n", subtracao (n1, n2));
+return 0;
+
+}
